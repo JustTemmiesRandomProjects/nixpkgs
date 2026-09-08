@@ -9,6 +9,8 @@
 buildPythonPackage (finalAttrs: {
   pname = "davey";
   version = "0.1.5";
+  pyproject = true;
+
 
   src = fetchFromGitHub {
     owner = "Snazzah";
@@ -27,8 +29,6 @@ buildPythonPackage (finalAttrs: {
     rustPlatform.cargoSetupHook
     rustPlatform.maturinBuildHook
   ];
-
-  format = "pyproject";
 
   maturinBuildFlags = [
     "--manifest-path"
